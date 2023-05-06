@@ -33,6 +33,30 @@ function NotesApp() {
         const updatedNotes = notes.filter((_, noteIndex) => noteIndex !== index);
         setNotes(updatedNotes);
       }
+
+      return (
+        <div>
+          <h1>Notes App</h1>
+          <input
+            type="text"
+            value={currentNote}
+            onChange={(e) => setCurrentNote(e.target.value)}
+            placeholder="Write your note here"
+          />
+          <button onClick={createNote}>
+            {editingIndex !== null ? 'Update Note' : 'Create Note'}
+          </button>
+          <ul>
+            {notes.map((note, index) => (
+              <li key={index}>
+                {note}
+                <button onClick={() => startEditing(index)}>Edit Note</button>
+                <button onClick={() => eraseNote(index)}>Erase Note</button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
 }
 
 export default NotesApp;
