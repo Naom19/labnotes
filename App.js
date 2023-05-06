@@ -24,6 +24,10 @@ function NotesApp() {
         setEditingIndex(null);
       }
 
+      function startEditing(index) {
+        setCurrentNote(notes[index]);
+        setEditingIndex(index);
+      }
 }
 
 export default NotesApp;
