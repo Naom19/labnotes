@@ -28,6 +28,11 @@ function NotesApp() {
         setCurrentNote(notes[index]);
         setEditingIndex(index);
       }
+
+      function eraseNote(index) {
+        const updatedNotes = notes.filter((_, noteIndex) => noteIndex !== index);
+        setNotes(updatedNotes);
+      }
 }
 
 export default NotesApp;
