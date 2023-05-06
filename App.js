@@ -15,6 +15,14 @@ function NotesApp() {
       }
     }
 
+    function editNote() {
+        const updatedNotes = notes.map((note, index) =>
+          index === editingIndex ? currentNote : note
+        );
+        setNotes(updatedNotes);
+        setCurrentNote('');
+        setEditingIndex(null);
+      }
 
 }
 
