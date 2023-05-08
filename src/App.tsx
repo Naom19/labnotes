@@ -1,35 +1,68 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+
+type NoteType = string;
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [notes, setNotes] = useState<NoteType[]>([]);
+  const [currentNote, setCurrentNote] = useState<NoteType>('');
+  const [editingIndex, setEditingIndex] = useState<number | undefined>();
 
-  return (
-    <>
+  function createNote() {
+    if (editingIndex !== null && editingIndex !== undefined) {
+      editNote();
+    } else {
+      setNotes([...notes, currentNote]);
+      setCurrentNote('');
+    }
+  }
+
+  function editNote() {
+      const updatedNotes = notes.map((note, index) => //Indicar en typescript en REACT que es de tipo array mover a otro componente
+        index === editingIndex ? currentNote : note
+      );
+      setNotes(updatedNotes);
+      setCurrentNote('');
+      setEditingIndex(undefined);
+    }
+
+    function startEditing(index: number) {
+      setCurrentNote(notes[index]);
+      setEditingIndex(index);
+    }
+
+    function eraseNote(index: number) {
+      const updatedNotes = notes.filter((_, noteIndex) => noteIndex !== index);
+      setNotes(updatedNotes);
+    }
+
+    return (
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <h1>Notes App</h1>
+        <input
+          type="text"
+          value={currentNote}
+          onChange={(e) => setCurrentNote(e.target.value)}
+          placeholder="Write your note here"
+        />
+        <button onClick={createNote}>
+          {editingIndex !== null && editingIndex !== undefined
+          ? 'Update Note' 
+          : 'Create Note'}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <ul>
+          {notes.map((note, index) => (
+            <li key={index}>
+              {note}
+              <button onClick={() => startEditing(index)}>Edit Note</button>
+              <button onClick={() => eraseNote(index)}>Erase Note</button>
+            </li>
+          ))}
+        </ul>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    );
 }
 
-export default App
+export default App;
