@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap');
 
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
 .navbar-logo {
   display: inline-block;
   position: static;
@@ -9,7 +19,7 @@
 
 .navbar-button {
   display: inline-block;
-  margin: 0 1rem 2rem 3rem; /* top, right, bottom, and left */
+  margin: 0 1rem; /* top, right, bottom, and left */
   background-color: #FFFFFF;
   height: 3rem;
   font-family: 'Lexend', sans-serif;
@@ -38,7 +48,8 @@
     color: #559F91;
     line-height: 1.5rem;
     box-sizing: border-box;
-    border: 0.125rem solid #559F91;
+    border: 0.16rem solid #559F91;
     border-radius: 0.313rem;
+    top: 50%;
 }
 

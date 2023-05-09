@@ -6,9 +6,8 @@ import logo from '../images/labnotes.png';
 // evitar usar "any" en typescript
 // estudiar interfaces y clases de typescript
 
-
 function App() {
-  /* cambiar a un array de objetos */
+  
   const buttonLabels = [
     {
       className: 'buttonSimple',

@@ -3,7 +3,7 @@ import React from 'react';
 // Define a type for the button labels
 type ButtonLabel = {
   label: string; // because of the URL
-  className: string;
+  className: string; 
 };
 
 // Update the NbProps type to use ButtonLabel[]
@@ -26,7 +26,7 @@ type NbProps = {
                 ))}
               </div>
               <div>
-                
+              {/* Aquí va el menú lateral */}
               </div>
             </div>
           );
