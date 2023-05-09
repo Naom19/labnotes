@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap');
 
 .navbar-logo {
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
-  width: 9.8rem;
-  height: 3.8rem;
+  display: inline-block;
+  position: static;
+  width: 9.83rem;
+  height: 3.83rem;
 }
 
 .navbar-button {
@@ -22,7 +21,7 @@
   position: relative; 
 }
 
-.navbar-button::after {
+.buttonTriangle::after {
   content: "";
   position: absolute;
   width: 0;
@@ -35,10 +34,11 @@
   transform: translateY(-50%) translateX(-0.313rem) rotate(179.27deg);
 }
 
-.button-wrapper {
-    display: inline-block;
-    margin: 0 1rem 2rem 3rem;
-    padding: 5px; /* Adjust this to control the size of the colored area */
-    background-color: transparent;
-    transition: background-color 0.3s ease; /* Optional: smooth color transition */
-  }
+.buttonLogIn {
+    color: #559F91;
+    line-height: 1.5rem;
+    box-sizing: border-box;
+    border: 0.125rem solid #559F91;
+    border-radius: 0.313rem;
+}
+

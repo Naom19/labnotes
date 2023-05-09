@@ -8,13 +8,32 @@ import logo from '../images/labnotes.png';
 
 
 function App() {
-  const buttonLabels = ['ABOUT US', 'FOR INDIVIDUALS', 'FOR TEAMS', 'LOG IN', 'ENGLISH'];
+  /* cambiar a un array de objetos */
+  const buttonLabels = [
+    {
+      className: 'buttonSimple',
+      label: 'ABOUT US'
+    }, {
+      className: 'buttonTriangle',
+      label: 'FOR INDIVIDUALS'
+    }, {
+      className: 'buttonTriangle',
+      label: 'FOR TEAMS'
+    }, {
+      className: 'buttonLogIn',
+      label: 'LOG IN'
+    }, {
+      className: 'buttonTriangle',
+      label: 'ENGLISH'
+    }
+  ]
+  
   return (
     <>
-    <Navbar logo={logo} buttonLabels={buttonLabels}></Navbar>
-    <Page></Page>
+      <Navbar logo={logo} buttonLabels={buttonLabels}></Navbar>
+      <Page></Page>
     </>
-  ); 
+  );
 }
 
 
