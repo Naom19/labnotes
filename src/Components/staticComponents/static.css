@@ -1,42 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap');
 
 .navbar-logo {
-    display: flex;
-    justify-content: left;
-    align-items: flex-start;
-    width: 9.8rem;
-    height: 3.8rem;
-    /* left: 1.3rem; */
-    /* top: 0.3rem; */
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  width: 9.8rem;
+  height: 3.8rem;
 }
 
-/* crear un container para el nav bar que tenga flexbox */
-
 .navbar-button {
+  display: inline-block;
+  margin: 0 1rem 2rem 3rem; /* top, right, bottom, and left */
+  background-color: #FFFFFF;
+  height: 3rem;
+  font-family: 'Lexend', sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  text-align: center;
+  color: #393E46;
+  position: relative; 
+}
+
+.navbar-button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 0.313rem solid transparent;
+  border-right: 0.313rem solid transparent;
+  border-bottom: 0.313rem solid #6CB1A3; /* Color of the triangle */
+  top: 50%; /* Vertically center the triangle */
+  left: 95%;
+  transform: translateY(-50%) translateX(-0.313rem) rotate(179.27deg);
+}
+
+.button-wrapper {
     display: inline-block;
-    margin: 0 1rem 2rem 3rem;  /*margin: Top, right, bottom, and left */
-    background-color: #FFFFFF;
-    ;
-    /* width: 10rem;*/
-    height: 3rem;
-    /* left: 20.75rem;*/
-    /* top: 0rem; */
-    font-family: 'Lexend', sans-serif;
-    font-weight: bold;
-    font-size: 0.9rem;
-    line-height: 1.5rem;
-    text-align: center;
-    /* or 160% */
-    color: #393E46;
-    }
-
-
-    /* triangle teams  */
-/*
-    position: absolute;
-    width: 13px;
-    height: 14px;
-    left: 941.18px;
-    top: 39px;
-    background: #6CB1A3;
-    transform: rotate(179.27deg); */
+    margin: 0 1rem 2rem 3rem;
+    padding: 5px; /* Adjust this to control the size of the colored area */
+    background-color: transparent;
+    transition: background-color 0.3s ease; /* Optional: smooth color transition */
+  }

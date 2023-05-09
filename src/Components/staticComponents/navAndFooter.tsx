@@ -6,6 +6,7 @@ type NbProps = {
 }
 
     const Navbar: React.FC<NbProps> = ({ logo, buttonLabels }) => {
+      
         return (
             <div className="navbar">
               <img src={logo} alt="Logo" className="navbar-logo" />
@@ -15,6 +16,9 @@ type NbProps = {
                     {label}
                   </button>
                 ))}
+              </div>
+              <div>
+                
               </div>
             </div>
           );
