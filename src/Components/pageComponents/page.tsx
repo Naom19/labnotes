@@ -3,9 +3,10 @@ import { useState } from 'react'
 type NoteType = string;
 
 function Page() {
-  const [notes, setNotes] = useState<NoteType[]>([]);
-  const [currentNote, setCurrentNote] = useState<NoteType>('');
-  const [editingIndex, setEditingIndex] = useState<number | undefined>();
+  const [notes, setNotes] = useState<NoteType[]>([]); // Array de notas
+  const [currentNote, setCurrentNote] = useState<NoteType>(''); // current note es la nota que actualmente se está editando 
+  const [editingIndex, setEditingIndex] = useState<number | undefined>(); 
+  // tomamos el indíce de la nota para la edición, se utiliza undefined para cuando la nota no se está editando
 
   function createNote() {
     if (editingIndex !== null && editingIndex !== undefined) {
