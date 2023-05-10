@@ -1,3 +1,15 @@
-.mainTitle {
-    background-color: none;
+.noteInput {
+    width: 15rem;
+    height: 2rem;
+    text-align: center;
+  /*  border-radius: 0.2rem;
+    border-color: rgba(57, 62, 70, 0.7); */
+}
+
+.buttonCreateNote {
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 0.16rem solid #559F91;
+    border-radius: 0.313rem;
+    background-color: #FFFFFF;
 }

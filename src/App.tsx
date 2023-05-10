@@ -6,15 +6,33 @@ import logo from '../images/labnotes.png';
 // evitar usar "any" en typescript
 // estudiar interfaces y clases de typescript
 
-
 function App() {
-  const buttonLabels = ['ABOUT US', 'FOR INDIVIDUALS', 'FOR TEAMS', 'LOG IN', 'ENGLISH'];
+  
+  const buttonLabels = [
+    {
+      className: 'buttonSimple',
+      label: 'ABOUT US'
+    }, {
+      className: 'buttonTriangle',
+      label: 'FOR INDIVIDUALS'
+    }, {
+      className: 'buttonTriangle',
+      label: 'FOR TEAMS'
+    }, {
+      className: 'buttonLogIn',
+      label: 'LOG IN'
+    }, {
+      className: 'buttonTriangle',
+      label: 'ENGLISH'
+    }
+  ]
+  
   return (
     <>
-    <Navbar logo={logo} buttonLabels={buttonLabels}></Navbar>
-    <Page></Page>
+      <Navbar logo={logo} buttonLabels={buttonLabels}></Navbar>
+      <Page></Page>
     </>
-  ); 
+  );
 }
 
 

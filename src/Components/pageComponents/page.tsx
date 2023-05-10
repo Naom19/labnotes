@@ -38,14 +38,14 @@ function Page() {
 
     return (
       <div>
-        <h1 className='mainTitle'>LabNotes</h1>
         <input
           type="text"
           value={currentNote}
           onChange={(e) => setCurrentNote(e.target.value)}
           placeholder="Write your note here"
+          className='noteInput'
         />
-        <button onClick={createNote}>
+        <button onClick={createNote} className='buttonCreateNote'>
           {editingIndex !== null && editingIndex !== undefined
           ? 'Update Note' 
           : 'Create Note'}
@@ -54,8 +54,8 @@ function Page() {
           {notes.map((note, index) => (
             <li key={index}>
               {note}
-              <button onClick={() => startEditing(index)}>Edit Note</button>
-              <button onClick={() => eraseNote(index)}>Erase Note</button>
+              <button onClick={() => startEditing(index)} className='buttonEditNote'>Edit Note</button>
+              <button onClick={() => eraseNote(index)} className='buttonEraseNote'>Erase Note</button>
             </li>
           ))}
         </ul>
