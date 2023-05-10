@@ -27,7 +27,7 @@ html, body {
 
 .navbar-button {
   display: inline-block;
-  margin: 0 1rem; /* top, right, bottom, and left */
+  margin: 0 1.5rem; /* top, right, bottom, and left */
   background-color: #FFFFFF;
   height: 3rem;
   font-family: 'Lexend', sans-serif;
