@@ -10,6 +10,8 @@ html, body {
 .navbar {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .navbar-logo {
@@ -20,8 +22,12 @@ html, body {
 }
 
 .navbar-button {
+  display: flex;
+}
+
+.navbar-button {
   display: inline-block;
-  margin: 0 1rem; /* top, right, bottom, and left */
+  margin: 0 1.5rem; /* top, right, bottom, and left */
   background-color: #FFFFFF;
   height: 3rem;
   font-family: 'Lexend', sans-serif;

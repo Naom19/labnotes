@@ -1,15 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap');
+
+
 .noteInput {
-    width: 15rem;
-    height: 2rem;
-    text-align: center;
+  width: 15rem;
+  height: 2rem;
+  text-align: center;
+  font-family: 'Lexend', sans-serif;
+  font-weight: bold;
+  font-size: 0.9rem;
   /*  border-radius: 0.2rem;
     border-color: rgba(57, 62, 70, 0.7); */
 }
 
 .buttonCreateNote {
-    margin: 1rem;
-    padding: 0.5rem;
-    border: 0.16rem solid #559F91;
-    border-radius: 0.313rem;
-    background-color: #FFFFFF;
+  font-family: 'Lexend', sans-serif;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 0.16rem solid #559F91;
+  border-radius: 0.313rem;
+  background-color: #FFFFFF;
+}
+
+.noteInputL {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  width: 30%;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 0.16rem solid #559F91;
+  border-radius: 0.313rem;
+}
+
+.noteWroten {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  width: fit-content;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 0.16rem solid #559F91;
+  border-radius: 0.313rem;
+}
+
+.buttonEditNote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lexend', sans-serif;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 0.16rem solid #559F91;
+  border-radius: 0.313rem;
+  background-color: #FFFFFF;
+}
+
+.buttonEraseNote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lexend', sans-serif;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: 0.16rem solid #559F91;
+  border-radius: 0.313rem;
+  background-color: #FFFFFF;
 }

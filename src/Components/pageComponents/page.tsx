@@ -1,10 +1,15 @@
 import { useState } from 'react'
 
-type NoteType = string;
+type NoteType = {
+  text: string
+  isEditing: boolean
+};
 
 function Page() {
   const [notes, setNotes] = useState<NoteType[]>([]); // Array de notas
-  const [currentNote, setCurrentNote] = useState<NoteType>(''); // current note es la nota que actualmente se está editando 
+  const [currentNote, setCurrentNote] = useState<string>(''); 
+  // current note es la nota que actualmente se está editando
+  // <string> es una anotación de typescript para especificar que useState está destinado a almacenar un valor de string (Hook)
   const [editingIndex, setEditingIndex] = useState<number | undefined>(); 
   // tomamos el indíce de la nota para la edición, se utiliza undefined para cuando la nota no se está editando
 
@@ -12,14 +17,14 @@ function Page() {
     if (editingIndex !== null && editingIndex !== undefined) {
       editNote();
     } else {
-      setNotes([...notes, currentNote]);
+      setNotes([...notes, { text: currentNote, isEditing: false }]);
       setCurrentNote('');
     }
   }
 
   function editNote() {
       const updatedNotes = notes.map((note, index) => //Indicar en typescript en REACT que es de tipo array mover a otro componente
-        index === editingIndex ? currentNote : note
+        index === editingIndex ? { text: currentNote, isEditing: false } : note
       );
       setNotes(updatedNotes);
       setCurrentNote('');
@@ -27,8 +32,10 @@ function Page() {
     }
 
     function startEditing(index: number) {
-      setCurrentNote(notes[index]);
-      setEditingIndex(index);
+      const updatedNotes = notes.map((note, i) =>
+        i === index ? { ...note, isEditing:true } : note
+        );
+        setNotes(updatedNotes);
     }
 
     function eraseNote(index: number) {
@@ -52,10 +59,24 @@ function Page() {
         </button>
         <ul>
           {notes.map((note, index) => (
-            <li key={index}>
-              {note}
-              <button onClick={() => startEditing(index)} className='buttonEditNote'>Edit Note</button>
-              <button onClick={() => eraseNote(index)} className='buttonEraseNote'>Erase Note</button>
+            <li key={index} className='noteWroten'>
+              {note.isEditing ? (
+                <input
+                  type='text'
+                  value={currentNote}
+                  onChange={(e) => setCurrentNote(e.target.value)}
+                  placeholder='Write your note here'
+                  className='noteInputL'
+                />
+              ) : (
+                note.text
+              )}
+              <button onClick={() => startEditing(index)} className='buttonEditNote'>
+                Edit Note
+              </button>
+              <button onClick={() => eraseNote(index)} className='buttonEraseNote'>
+                Erase Note
+              </button>
             </li>
           ))}
         </ul>
