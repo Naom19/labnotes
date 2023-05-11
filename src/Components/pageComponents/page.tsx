@@ -1,4 +1,8 @@
 import { useState } from 'react'
+import logo from '../../../images/edit.png';
+import logoF from '../../../images/paperclip-regular-24.png';
+import logoS from '../../../images/share-alt-regular-24.png';
+import logoT from '../../../images/trash-alt-regular-24.png';
 
 type NoteType = {
   text: string
@@ -12,6 +16,9 @@ function Page() {
   // <string> es una anotación de typescript para especificar que useState está destinado a almacenar un valor de string (Hook)
   const [editingIndex, setEditingIndex] = useState<number | undefined>(); 
   // tomamos el indíce de la nota para la edición, se utiliza undefined para cuando la nota no se está editando
+
+  // Crear una nueva variable editingNote
+  const [editingNote, setEditingNotes] = useState<NoteType[]>([]);
 
   function createNote() { // Revisa si se está editando la nota, en caso de ser cierto llama editNote
     if (editingIndex !== null && editingIndex !== undefined) {
@@ -47,7 +54,7 @@ function Page() {
       <div>
         <input
           type="text"
-          value={currentNote}
+          value={currentNote} // mejorar cómo se enlazan create, edit y currentNote (solo con el arreglo de notas)
           onChange={(e) => setCurrentNote(e.target.value)}
           placeholder="Write your note here"
           className='noteInput'
@@ -72,10 +79,18 @@ function Page() {
                 note.text
               )}
               <button onClick={() => startEditing(index)} className='buttonEditNote'>
-                Edit Note
+                <img src={logo} alt='edit' />
+                Edit
+              </button>
+              <button className='buttonFile'>
+              <img src={logoF} alt='add file' />
+              </button>
+              <button className='buttonShare'>
+              <img src={logoS} alt='share' />
               </button>
               <button onClick={() => eraseNote(index)} className='buttonEraseNote'>
-                Erase Note
+              <img src={logoT} alt='trash' />
+                Erase
               </button>
             </li>
           ))}

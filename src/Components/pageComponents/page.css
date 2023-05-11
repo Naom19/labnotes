@@ -39,8 +39,8 @@
   align-items: center;
   background-color: #FFFFFF;
   width: fit-content;
-  margin: 1rem;
-  padding: 0.5rem;
+  margin: 1.5rem;
+  padding: 1rem;
   border: 0.16rem solid #559F91;
   border-radius: 0.313rem;
 }
@@ -50,11 +50,26 @@
   justify-content: center;
   align-items: center;
   font-family: 'Lexend', sans-serif;
-  margin: 1rem;
+  margin: 0.5rem;
+  margin-left: 1.5rem;
   padding: 0.5rem;
-  border: 0.16rem solid #559F91;
-  border-radius: 0.313rem;
   background-color: #FFFFFF;
+}
+
+.buttonFile {
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.buttonShare {
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF;
+  margin: 0.5rem;
+  padding: 0.5rem;
 }
 
 .buttonEraseNote {
@@ -62,9 +77,9 @@
   justify-content: center;
   align-items: center;
   font-family: 'Lexend', sans-serif;
-  margin: 1rem;
+  margin: 0.5rem;
   padding: 0.5rem;
-  border: 0.16rem solid #559F91;
-  border-radius: 0.313rem;
+  /* border: 0.16rem solid #559F91;
+  border-radius: 0.313rem; */
   background-color: #FFFFFF;
 }
