@@ -13,25 +13,25 @@ function Page() {
   const [editingIndex, setEditingIndex] = useState<number | undefined>(); 
   // tomamos el indíce de la nota para la edición, se utiliza undefined para cuando la nota no se está editando
 
-  function createNote() {
+  function createNote() { // Revisa si se está editando la nota, en caso de ser cierto llama editNote
     if (editingIndex !== null && editingIndex !== undefined) {
       editNote();
     } else {
       setNotes([...notes, { text: currentNote, isEditing: false }]);
-      setCurrentNote('');
+      setCurrentNote(''); // en caso de ser falso, agrega una nueva nota con el texto actual, isEditing es false y resetea currentNote
     }
   }
 
   function editNote() {
       const updatedNotes = notes.map((note, index) => //Indicar en typescript en REACT que es de tipo array mover a otro componente
         index === editingIndex ? { text: currentNote, isEditing: false } : note
-      );
+      ); // crea un nuevo array donde la nota reemplaza editingIndex con una nueva nota que contiene el texto actual y coloca isEditing a false
       setNotes(updatedNotes);
       setCurrentNote('');
       setEditingIndex(undefined);
-    }
-
-    function startEditing(index: number) {
+    } // Las demás notas no se cambian, luego se establece el nuevo array como el nuevo estado para notes y 'limpia' currentNote y editingIndex
+    
+    function startEditing(index: number) { // crea un nuevo array donde la nota con el index tiene isEditing true se actualiza
       const updatedNotes = notes.map((note, i) =>
         i === index ? { ...note, isEditing:true } : note
         );
