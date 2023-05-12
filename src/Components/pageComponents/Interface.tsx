@@ -1,10 +1,12 @@
 import { useState } from 'react'
-import { NoteType } from '../staticComponents/Typings';
 import logo from '../../../images/edit.png';
-// import logoG from '../../../images/edit-green.png';
+import logoG from '../../../images/edit-green.png';
 import logoF from '../../../images/paperclip-regular-24.png';
 import logoS from '../../../images/share-alt-regular-24.png';
 import logoT from '../../../images/trash-alt-regular-24.png';
+import { NoteType } from '../staticComponents/Typings';
+
+
 
 // crear nuevo componente que sólo cree el input 
 

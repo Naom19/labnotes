@@ -29,8 +29,8 @@ function App() {
   
   return (
     <>
-      <Navbar logo={logo} buttonLabels={buttonLabels}></Navbar>
-      <Page></Page>
+      <Navbar logo={logo} buttonLabels={buttonLabels} />
+      <Page />
     </>
   );
 }

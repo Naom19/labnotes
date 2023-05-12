@@ -15,3 +15,4 @@ export type ButtonLabel = {
   label: string; // because of the URL
   className: string; 
 }; // Defines type for the button labels
+

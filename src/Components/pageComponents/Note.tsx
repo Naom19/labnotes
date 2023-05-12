@@ -4,6 +4,7 @@ import { NoteType } from '../staticComponents/Typings';
 
 function Note () {
     const [note, setNote] = useState<NoteType>();
+    return 
 } // renderizar HTML y posteriormente enfocarme en la funcionalidad
 
 export default Note;
