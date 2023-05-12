@@ -1,8 +1,8 @@
-import Page from './Components/pageComponents/page';
+import Page from './Components/pageComponents/Interface';
 import Navbar from './Components/staticComponents/navAndFooter';
 import './Components/staticComponents/static.css';
 import logo from '../images/labnotes.png';
-import './Components/pageComponents/page.css'
+import './Components/pageComponents/page.css';
 // evitar usar "any" en typescript
 // estudiar interfaces y clases de typescript
 

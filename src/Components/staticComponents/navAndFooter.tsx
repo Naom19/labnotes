@@ -1,16 +1,5 @@
 import React from 'react';
-
-// Define a type for the button labels
-type ButtonLabel = {
-  label: string; // because of the URL
-  className: string; 
-};
-
-// Update the NbProps type to use ButtonLabel[]
-type NbProps = {
-  logo: string;
-  buttonLabels: ButtonLabel[];
-};
+import { NbProps, ButtonLabel } from '../staticComponents/Typings';
 
 
     const Navbar: React.FC<NbProps> = ({ logo, buttonLabels }) => {

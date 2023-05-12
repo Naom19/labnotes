@@ -1,13 +1,12 @@
 import { useState } from 'react'
+import { NoteType } from '../staticComponents/Typings';
 import logo from '../../../images/edit.png';
+// import logoG from '../../../images/edit-green.png';
 import logoF from '../../../images/paperclip-regular-24.png';
 import logoS from '../../../images/share-alt-regular-24.png';
 import logoT from '../../../images/trash-alt-regular-24.png';
 
-type NoteType = {
-  text: string
-  isEditing: boolean
-};
+// crear nuevo componente que sólo cree el input 
 
 function Page() {
   const [notes, setNotes] = useState<NoteType[]>([]); // Array de notas
@@ -18,7 +17,10 @@ function Page() {
   // tomamos el indíce de la nota para la edición, se utiliza undefined para cuando la nota no se está editando
 
   // Crear una nueva variable editingNote
-  const [editingNote, setEditingNotes] = useState<NoteType[]>([]);
+  // const [editingNote, setEditingNotes] = useState<NoteType[]>([]);
+
+  const [iconSrc, setIconSrc] = useState<string>('../../../images/edit.png');
+
 
   function createNote() { // Revisa si se está editando la nota, en caso de ser cierto llama editNote
     if (editingIndex !== null && editingIndex !== undefined) {
@@ -45,6 +47,12 @@ function Page() {
         setNotes(updatedNotes);
     }
 
+    // fx para cambiar el color del icono al editar
+    function handleEditBtnClick(index: number) {
+      startEditing(index);
+      setIconSrc('../../../images/edit-green.png');
+    }
+
     function eraseNote(index: number) {
       const updatedNotes = notes.filter((_, noteIndex) => noteIndex !== index);
       setNotes(updatedNotes);
@@ -64,7 +72,7 @@ function Page() {
           ? 'Update Note' 
           : 'Create Note'}
         </button>
-        <ul>
+        <ul className='ulList'> 
           {notes.map((note, index) => (
             <li key={index} className='noteWroten'>
               {note.isEditing ? (
@@ -77,11 +85,17 @@ function Page() {
                 />
               ) : (
                 note.text
-              )}
+              )} 
+            
               <button onClick={() => startEditing(index)} className='buttonEditNote'>
                 <img src={logo} alt='edit' />
                 Edit
-              </button>
+              </button> 
+              {/* <button onClick={() => handleEditBtnClick(index)} className='buttonEditNote'>
+                <img src={iconSrc} alt='edit' />
+                Edit
+              </button> */}
+
               <button className='buttonFile'>
               <img src={logoF} alt='add file' />
               </button>
