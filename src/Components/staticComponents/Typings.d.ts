@@ -3,6 +3,7 @@
  export type NoteType = { // voy a recibir esto como prop dentro del componente Note
     text: string
     isEditing: boolean
+    tempText: string
   }; 
 
   export type NbProps = { 

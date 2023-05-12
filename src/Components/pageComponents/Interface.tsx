@@ -80,8 +80,8 @@ function Page() {
               {note.isEditing ? (
                 <input
                   type='text'
-                  value={currentNote}
-                  onChange={(e) => setCurrentNote(e.target.value)}
+                  value={currentNote}// tempText
+                  onChange={(e) => setCurrentNote(e.target.value)} // debe actualizar el atributo tempText del note
                   placeholder='Write your note here'
                   className='noteInputL'
                 />
@@ -89,10 +89,16 @@ function Page() {
                 note.text
               )} 
             
-              <button onClick={() => startEditing(index)} className='buttonEditNote'>
+            {note.isEditing ? (
+              <button onClick={() => startEditing(index)} className='buttonEditNote'>//  tempTExt == text
                 <img src={logo} alt='edit' />
                 Edit
-              </button> 
+              </button>)  : (
+                <button onClick={() => endEditing(index)} className='buttonEditNote'> // debe reemplazar el atributo text por lo que hay que en tempTExt
+                <img src={logo} alt='edit' />
+                Save
+              </button>
+              )} 
               {/* <button onClick={() => handleEditBtnClick(index)} className='buttonEditNote'>
                 <img src={iconSrc} alt='edit' />
                 Edit
