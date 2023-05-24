@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { getFirestore, collection, getDocs, getDoc } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
     apiKey: "AIzaSyB5GiLeEImjorXS6EpIBTtDplEgPAtziFc",
@@ -12,14 +12,8 @@ const firebaseConfig = {
     measurementId: "G-8HWLRPWH36"
   };
 
-const auth = getAuth(firebaseApp);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-onAuthStateChanged(auth, user => {
-    if (user ≠ null) {
-    console.log('Log in succesful!');
-} else {
-    console.log('Authentication error');
-}
-});
-
-export default firebase;
+export default auth;
